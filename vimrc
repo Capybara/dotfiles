@@ -1,9 +1,7 @@
 set nocompatible      " We're running Vim, not Vi!
 colorscheme Zenburn "color schemes are located in .vim/colors
-
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() "pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
-pathogen#helptags()
 " set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
 "Omnicomplete settings

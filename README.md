@@ -1,4 +1,3 @@
-dotfiles
-========
+vimdots
 
-dotfiles for Vim
+vim dot files and plugins
