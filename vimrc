@@ -19,7 +19,10 @@ map ?g "zyiw
 
 
 "Simplenote plugin credentials
-source ~/.simplenote_vim
+"source ~/.simplenote_vim
+if filereadable($HOME."/.simplenote_vim")
+    source $HOME/.simplenote_vim
+endif
 
 "when something is yanked in vim, it goes to my OS X clipboard
 set clipboard=unnamed
