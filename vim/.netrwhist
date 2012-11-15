@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/Jay/Documents/bin/Ruby_Scripts/pilltracker'
 let g:netrw_dirhist_2='/Users/Jay/fuga/fuga'
+let g:netrw_dirhist_3='/Users/j/trunk/wepscript-read-only'
