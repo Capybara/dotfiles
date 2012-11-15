@@ -6,7 +6,15 @@ call pathogen#infect() "pathogen is a plugin manager, clone a plugins git repo t
 set ignorecase            " Make searches case-insensitive.
 "Omnicomplete settings
 filetype plugin on
+
 set ofu=syntaxcomplete#Complete
+
+" Toggle spell checking on and off with `,s`
+let mapleader = ","
+nmap <silent> <leader>s :set spell!<CR>
+ 
+" Set region to American English
+set spelllang=en_us
 
 "Bash shell script plugin settings
 let g:BASH_AuthorName = 'My Name'
