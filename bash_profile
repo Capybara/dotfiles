@@ -1,5 +1,6 @@
 source ~/.aliases
 source $HOME/.prowl_api
+PS1="\W \u\$ "
 
 for file in ~/.{aliases,prowl_api}; do
 	[ -r "$file" ] && source "$file"
@@ -23,6 +24,9 @@ shopt -s histappend
 
 HISTCONTROL=ignoreboth
 HISTSIZE=5000
+
+# open files from command line with macvim
+function gvim { /Applications/MacVim.app/Contents/MacOS/Vim -g $*; }
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 

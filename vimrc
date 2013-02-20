@@ -1,13 +1,35 @@
 set nocompatible      " We're running Vim, not Vi!
-colorscheme Zenburn "color schemes are located in .vim/colors
+colorscheme clarity "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect() "pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
+execute pathogen#infect()
+"pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
 " set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
+
+" Gundo toggle
+ nnoremap <F5> :GundoToggle<CR>
+" use blowfish encryption
+set cm=blowfish
+
+" Conque stuff
+"nmap ,T :<C-u>ConqueTerm bash<CR>
+nmap ,t :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>
+nmap ,s :<C-u>split scratch \| set nonumber foldcolumn=0 winfixheight<CR>
+"let g:ConqueTerm_PromptRegex = '^\[\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\]\$'
+"let g:Conque_TERM = 'vt100'
+"let g:Conque_Tab_Timeout = 10
+"let g:ConqueTerm_ReadUnfocused = 0
+
+
+
 "Omnicomplete settings
 filetype plugin on
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 set ofu=syntaxcomplete#Complete
+
 
 " Toggle spell checking on and off with `,s`
 let mapleader = ","
