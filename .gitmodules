@@ -25,3 +25,6 @@
 [submodule "vim/bundle/simplenote"]
 	path = vim/bundle/simplenote
 	url = https://github.com/mrtazz/simplenote.vim.git
+[submodule "ScrollColors"]
+	path = ScrollColors
+	url = https://github.com/vim-scripts/ScrollColors.git
