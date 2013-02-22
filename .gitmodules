@@ -31,3 +31,6 @@
 [submodule "vim/bundle/ScrollColors"]
 	path = vim/bundle/ScrollColors
 	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
