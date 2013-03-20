@@ -1,6 +1,7 @@
 source ~/.aliases
 source $HOME/.prowl_api
 PS1="\W \u\$ "
+export EDITOR=vim
 
 for file in ~/.{aliases,prowl_api}; do
 	[ -r "$file" ] && source "$file"
@@ -10,7 +11,7 @@ export LANG=en_US.UTF-8
 export PATH="$PATH:/Users/$User/Scripts"
 export PATH="$PATH:/Users/$USER/Ruby"
 export PATH="$PATH:/Users/$USER/Bash"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
 export LSCOLORS=dxfxhxGxFxexexaxaxaxax

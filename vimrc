@@ -1,4 +1,7 @@
 set nocompatible      " We're running Vim, not Vi!
+set autochdir
+let g:slime_target = "tmux"
+
 colorscheme clarity "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -14,6 +17,7 @@ set cm=blowfish
 " Conque stuff
 "nmap ,T :<C-u>ConqueTerm bash<CR>
 nmap ,t :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>
+nmap ,p :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>pry<CR>
 nmap ,s :<C-u>split scratch \| set nonumber foldcolumn=0 winfixheight<CR>
 "let g:ConqueTerm_PromptRegex = '^\[\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\]\$'
 "let g:Conque_TERM = 'vt100'
@@ -49,10 +53,10 @@ map ?g "zyiw
 
 
 "Simplenote plugin credentials
-"source ~/.simplenote_vim
-if filereadable($HOME."/.simplenote_vim")
-    source $HOME/.simplenote_vim
-endif
+source ~/.simplenote_vim
+"if filereadable($HOME."/.simplenote_vim")
+ "   source $HOME/.simplenote_vim
+"endif
 
 "when something is yanked in vim, it goes to my OS X clipboard
 set clipboard=unnamed
