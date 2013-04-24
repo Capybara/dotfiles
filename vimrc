@@ -1,7 +1,7 @@
 set nocompatible      " We're running Vim, not Vi!
 set autochdir
 let g:slime_target = "tmux"
-
+let g:slime_paste_file = "$HOME/.slime_paste"
 colorscheme clarity "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -16,13 +16,13 @@ set cm=blowfish
 
 " Conque stuff
 "nmap ,T :<C-u>ConqueTerm bash<CR>
-nmap ,t :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>
-nmap ,p :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>pry<CR>
-nmap ,s :<C-u>split scratch \| set nonumber foldcolumn=0 winfixheight<CR>
-"let g:ConqueTerm_PromptRegex = '^\[\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\]\$'
-"let g:Conque_TERM = 'vt100'
-"let g:Conque_Tab_Timeout = 10
-"let g:ConqueTerm_ReadUnfocused = 0
+"nmap ,t :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>
+"nmap ,p :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>pry<CR>
+"nmap ,s :<C-u>split scratch \| set nonumber foldcolumn=0 winfixheight<CR>
+""let g:ConqueTerm_PromptRegex = '^\[\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\]\$'
+""let g:Conque_TERM = 'vt100'
+""let g:Conque_Tab_Timeout = 10
+""let g:ConqueTerm_ReadUnfocused = 0
 
 
 
@@ -47,9 +47,9 @@ let g:BASH_AuthorName = 'My Name'
 
 "Map <Esc> key to 'j' key presses twice quickly
 imap jj <Esc> 
-"short cut to os x service "search google
-map ?g "zyiw
- \ !open http://www.google.com/search?q=";'.@z.'"'<CR>
+""short cut to os x service "search google
+"map ?g "zyiw
+" \ !open http://www.google.com/search?q=";'.@z.'"'<CR>
 
 
 "Simplenote plugin credentials
@@ -64,7 +64,6 @@ set clipboard=unnamed
 "allow switching buffers without writing changes first
 set hidden
 
-"I think this for bash plugin
 
 "====================Ruby related stuff=================================================
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -86,3 +85,6 @@ nmap <ESC>t :NERDTreeToggle<RETURN>
 
 "Show line numbers
 set number 
+hi CursorLine   cterm=NONE ctermbg=235
+hi CursorColumn cterm=NONE ctermbg=235
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>

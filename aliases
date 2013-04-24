@@ -7,6 +7,11 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias ql="qlmanage -p"
+alias tmn="tmuxinator"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -14,7 +19,6 @@ alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
-alias v="vim"
 alias m="mate ."
 alias s="subl ."
 alias o="open"
@@ -47,7 +51,8 @@ alias sudo='sudo '
 alias gurl="curl --compressed"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; gem update; cd ~/dotfiles ; git submodule foreach git pull origin master; cd -'
+
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -134,7 +139,9 @@ alias logs='cd /var/log ; ls'
 alias scr='cd /Users/$USER/Scripts ; ls'
 alias rub='cd /Users/$USER/Ruby ; ls'
 alias bas='cd /Users/$USER/Bash ; ls'
+alias tst='cd $HOME/Testing ; ls'
 alias repair='diskutil repairPermissions /'
 #alias mosh='mosh -a -server=/usr/local/bin/mosh-server'
 alias tv='open http://10.0.1.8:{8080,5050,8081,8181}'
 alias picard='df | grep -o \/dev\/disk... > /tmp/1 ; echo insert card; sleep 2; read;df | grep -o \/dev\/disk... > /tmp/2; a=$(comm -3 /tmp/1 /tmp/2);echo "$a"" is your card"'
+alias prag='cd ~/Ruby/Prag; ls'
