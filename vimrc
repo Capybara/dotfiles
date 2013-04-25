@@ -15,8 +15,8 @@ set ignorecase            " Make searches case-insensitive.
 set cm=blowfish
 
 " Conque stuff
-"nmap ,T :<C-u>ConqueTerm bash<CR>
-"nmap ,t :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>
+nmap ,T :<C-u>ConqueTerm zsh<CR>
+nmap ,t :<C-u>ConqueTermSplit zsh<CR>
 "nmap ,p :<C-u>ConqueTermSplit bash <CR>source $HOME/.bash_profile<CR>PS1="\W \u\$ "<CR>clear<CR>pry<CR>
 "nmap ,s :<C-u>split scratch \| set nonumber foldcolumn=0 winfixheight<CR>
 ""let g:ConqueTerm_PromptRegex = '^\[\w\+@[0-9A-Za-z_.-]\+:[0-9A-Za-z_./\~,:-]\+\]\$'
