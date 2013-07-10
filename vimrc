@@ -2,7 +2,7 @@ set nocompatible      " We're running Vim, not Vi!
 set autochdir
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-colorscheme clarity "color schemes are located in .vim/colors
+colorscheme desert256 "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 "pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
@@ -74,8 +74,8 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 compiler ruby         " Enablenable compiler support for ruby
 "Set tab prefrences for ruby files
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab "sts=2 
+"set list "show tabs
 "toggle NerdTree file browser with <Esc> + T
 function OpenNERDTree()
     execute ":NERDTree"
@@ -87,4 +87,5 @@ nmap <ESC>t :NERDTreeToggle<RETURN>
 set number 
 hi CursorLine   cterm=NONE ctermbg=235
 hi CursorColumn cterm=NONE ctermbg=235
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+"toggle crosshairs
+nnoremap <Leader>cr :set cursorline! cursorcolumn!<CR>

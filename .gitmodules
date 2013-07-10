@@ -34,9 +34,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/vim-conque"]
-	path = vim/bundle/vim-conque
-	url = https://github.com/rson/vim-conque.git
 [submodule "vim/bundle/vim-endwise"]
 	path = vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
@@ -51,10 +48,28 @@
 	url = https://github.com/mattn/webapi-vim.git
 [submodule "vim/bundle/slime"]
 	path = vim/bundle/slime
-	url = git://github.com/jpalardy/vim-slime.git
+	url = https://github.com/jpalardy/vim-slime.git
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
+	url = https://github.com/jisaacks/GitGutter.git
 [submodule "vim/bundle/slimux"]
 	path = vim/bundle/slimux
 	url = https://github.com/epeli/slimux.git
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/Dispatch"]
+	path = vim/bundle/Dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/bundle/nerdcomment"]
+	path = vim/bundle/nerdcomment
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/rubocop"]
+	path = vim/bundle/rubocop
+	url = https://github.com/ngmy/vim-rubocop.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git

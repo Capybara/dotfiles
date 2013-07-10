@@ -1,0 +1,11 @@
+# ~/.tmuxinator/ruby.yml
+# you can make as many tabs as you wish...
+
+project_name: Simple-Sinatra
+project_root: ~/Testing/simp
+tabs:
+  - editor:
+      layout: 26a9,80x24,0,0[80x7,0,0,41,80x16,0,8,42]
+      panes:
+        - git status
+        - vim -c "set ft=ruby" -c "set expandtab"
