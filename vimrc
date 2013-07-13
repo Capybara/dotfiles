@@ -2,7 +2,7 @@ set nocompatible      " We're running Vim, not Vi!
 set autochdir
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-colorscheme desert256 "color schemes are located in .vim/colors
+colorscheme zmrok "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 "pathogen is a plugin manager, clone a plugins git repo to .vim/bundles

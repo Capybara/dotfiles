@@ -6,6 +6,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# Functions
+p () { cd `~/Testing/prompt/proj.rb "$1"` }
+
 # Shortcuts
 alias gpg="gpg2"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
@@ -16,7 +19,6 @@ alias tmn="tmuxinator"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
