@@ -1,16 +1,17 @@
 set nocompatible      " We're running Vim, not Vi!
 set autochdir
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-colorscheme zmrok "color schemes are located in .vim/colors
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 "pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+colorscheme solarized "color schemes are located in .vim/colors
+set background=dark
+call togglebg#map("<F5>")
 " set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
-
 " Gundo toggle
- nnoremap <F5> :GundoToggle<CR>
+ nnoremap <F4> :GundoToggle<CR>
 " use blowfish encryption
 set cm=blowfish
 
