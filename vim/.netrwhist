@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/Jay/Documents/bin/Ruby_Scripts/pilltracker'
 let g:netrw_dirhist_2='/Users/Jay/fuga/fuga'
 let g:netrw_dirhist_3='/Users/j/trunk/wepscript-read-only'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/j/dotfiles/vim'
 let g:netrw_dirhist_6='/Users/j/dotfiles/.git'
 let g:netrw_dirhist_7='/Users/j/.oh-my-zsh'
 let g:netrw_dirhist_8='/Users/j/Testing/simp/views/images'
+let g:netrw_dirhist_9='/usr/local/Library/Homebrew/utils'
