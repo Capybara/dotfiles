@@ -48,9 +48,11 @@ imap jj <Esc>
 
 " map vim cheatsheet
 map <silent> <leader>x :!qlmanage -p ~/dotfiles/vim_cheat.gif<CR>
-" Simplenote plugin credentials
-source ~/.simplenote_vim
 
+" Simplenote plugin credentials
+if filereadable("~/.simplenote_vim")
+  source ~/.simplenote_vim
+endif
 " when something is yanked in vim, it goes to my OS X clipboard
 set clipboard=unnamed
 
