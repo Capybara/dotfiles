@@ -48,8 +48,8 @@ done
 # notify via prowl when an ssh connection is made
 if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publi    capi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F even    t="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection     to `hostname`" >/dev/null 2>&1; fi
 
+rm -f ~/.zcompdump; compinit -u
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load     RVM into a shell session *as a function*
-
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

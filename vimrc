@@ -54,7 +54,7 @@ if filereadable("~/.simplenote_vim")
   source ~/.simplenote_vim
 endif
 " when something is yanked in vim, it goes to my OS X clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "allow switching buffers without writing changes first
 set hidden
@@ -77,7 +77,7 @@ command -nargs=0 OpenNERDTree :call OpenNERDTree()
 nmap <ESC>t :NERDTreeToggle<RETURN>
 
 "Show line numbers
-set number 
+set number
 hi CursorLine   cterm=NONE ctermbg=235
 hi CursorColumn cterm=NONE ctermbg=235
 
