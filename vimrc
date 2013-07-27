@@ -7,9 +7,20 @@ execute pathogen#infect()
 
 filetype plugin on
 
+" Gist settings
+let g:gist_show_privates = 1
+let g:gist_clip_command = 'pbcopy'
+
 " pass code from tmux pane into another running pry
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
+
+let g:UltiSnipsListSnippets = "<leader><tab>"
+" buff tabs
+:noremap <C-k> :bprev<CR>
+:noremap <C-j> :bnext<CR> 
+set laststatus=2
+:let g:buftabs_in_statusline=1
 
 " Make sure iTerm is using solarized colors also
 colorscheme solarized "color schemes are located in .vim/colors
@@ -48,11 +59,9 @@ imap jj <Esc>
 
 " map vim cheatsheet
 map <silent> <leader>x :!qlmanage -p ~/dotfiles/vim_cheat.gif<CR>
-
 " Simplenote plugin credentials
-if filereadable("~/.simplenote_vim")
-  source ~/.simplenote_vim
-endif
+source ~/.simplenote_vim
+
 " when something is yanked in vim, it goes to my OS X clipboard
 set clipboard=unnamed
 
