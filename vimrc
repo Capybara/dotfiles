@@ -1,11 +1,24 @@
 set nocompatible      " We're running Vim, not Vi!
 set autochdir         " Set working directory to the current file
 " Pathogen
+" pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-"pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
 
 filetype plugin on
+
+if has('mouse')
+  set mouse=a
+endif
+set noswapfile
+set nojoinspaces
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+let mapleader = ","
+nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " Gist settings
 let g:gist_show_privates = 1
@@ -15,7 +28,9 @@ let g:gist_clip_command = 'pbcopy'
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 
+" changed default, I think supertab was using it
 let g:UltiSnipsListSnippets = "<leader><tab>"
+
 " buff tabs
 :noremap <C-k> :bprev<CR>
 :noremap <C-j> :bnext<CR> 
@@ -48,7 +63,6 @@ set pastetoggle=<F2>
 set showmode
 
 " Toggle spell checking on and off with `,s`
-let mapleader = ","
 nmap <silent> <leader>s :set spell!<CR>
  
 " Set region to American English
@@ -78,12 +92,8 @@ compiler ruby         " Enablenable compiler support for ruby
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab "sts=2 
 "set list "show tabs
 
-"toggle NerdTree file browser with <Esc> + T
-function OpenNERDTree()
-    execute ":NERDTree"
-endfunction
-command -nargs=0 OpenNERDTree :call OpenNERDTree()
-nmap <ESC>t :NERDTreeToggle<RETURN>
+"toggle NerdTree file browser with <,> + T
+nmap <leader>t :NERDTreeToggle<RETURN>
 
 "Show line numbers
 set number 
