@@ -1,104 +1,147 @@
-set nocompatible      " We're running Vim, not Vi!
-set autochdir         " Set working directory to the current file
-" Pathogen
-" pathogen is a plugin manager, clone a plugins git repo to .vim/bundles
+"   VIM, not Vi
+set nocompatible
+"   PATHOGEN is a plugin manager, clone a plugins git repo to .vim/bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+"   GENERAL 
 
-filetype plugin on
-
-if has('mouse')
-  set mouse=a
-endif
-set noswapfile
-set nojoinspaces
-
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+""  Toggle current fold with space bar
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+""  Use a , for the leader
 let mapleader = ","
-nmap <leader>v :tabedit $MYVIMRC<CR>
 
-" Gist settings
-let g:gist_show_privates = 1
-let g:gist_clip_command = 'pbcopy'
+""  Copy/Paste
 
-" pass code from tmux pane into another running pry
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
+""" When something is yanked in vim, it goes to my OS X clipboard
+set clipboard=unnamed
 
-" changed default, I think supertab was using it
-let g:UltiSnipsListSnippets = "<leader><tab>"
+""  Buffers
 
-" buff tabs
-:noremap <C-k> :bprev<CR>
-:noremap <C-j> :bnext<CR> 
-set laststatus=2
-:let g:buftabs_in_statusline=1
+""" Allow switching buffers without writing changes first
+set hidden
 
-" Make sure iTerm is using solarized colors also
+""" Buffer maps
+noremap <C-k> :bprev<CR>
+noremap <C-j> :bnext<CR>
+
+""  Design/Colorscheme
+
+""" Show line numbers
+set number
+
+""" Toggle crosshairs
+nnoremap <Leader>cr :set cursorline! cursorcolumn!<CR>
+
+""" Enable syntaxntax highlighting
+syntax on
+
+""" Highlight as you type your search.
+set incsearch
+
+""" Make sure iTerm is using solarized colors also
 colorscheme solarized "color schemes are located in .vim/colors
 set background=dark
 call togglebg#map("<F5>")
 
-set incsearch             " But do highlight as you type your search.
-set ignorecase            " Make searches case-insensitive.
-syntax on       	  " Enable syntaxntax highlighting
-filetype on               " Enable filetype detection
-filetype indent on        " Enable filetype-specific indenting
+""" Status bar
+set laststatus=2
 
-" Gundo toggle
- nnoremap <F4> :GundoToggle<CR>
+""" Set working directory to the current file
+set autochdir
 
-" use blowfish encryption
+""  Use mouse to scroll and select in all modes
+if has('mouse')
+  set mouse=a
+endif
+
+""  Don't use a swapfile
+set noswapfile
+
+""  If you're bothered by the extra spaces after sentences (lines ending in !, ?, or .), turn off joinspaces
+set nojoinspaces
+
+""  Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+""  Open vimrc in new tab with ,v
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
+""  Make searches case-insensitive.
+set ignorecase
+
+""  Filetype
+
+""  Load filetype plugins
+filetype plugin on
+
+autocmd Filetype vim setlocal foldcolumn=3
+autocmd Filetype vim setlocal foldexpr=VimrcFolds()
+
+""" Enable filetype detection
+filetype on
+
+""" Enable filetype-specific indenting
+filetype indent on
+
+""  Use blowfish encryption
 set cm=blowfish
 
-" Omnicomplete settings
+""  Omnicomplete settings
 set ofu=syntaxcomplete#Complete
 
-" Makes pasting into vim better
+""  Makes pasting into vim better
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" Toggle spell checking on and off with `,s`
+""  Toggle spell checking on and off with `,s`
 nmap <silent> <leader>s :set spell!<CR>
- 
-" Set region to American English
+
+""  Set region to American English
 set spelllang=en_us
 
-" Map <Esc> key to 'j' key presses twice quickly
-imap jj <Esc> 
+""  Map <Esc> key to 'j' key presses twice quickly
+imap jj <Esc>
 
-" map vim cheatsheet
+""  Map vim cheatsheet
 map <silent> <leader>x :!qlmanage -p ~/dotfiles/vim_cheat.gif<CR>
-" Simplenote plugin credentials
-source ~/.simplenote_vim
 
-" when something is yanked in vim, it goes to my OS X clipboard
-set clipboard=unnamed
+"   PLUGIN STUFF
 
-"allow switching buffers without writing changes first
-set hidden
+""  Gist settings
+let g:gist_show_privates = 1
+let g:gist_clip_command = 'pbcopy'
 
+""  Pass code from tmux pane into another running pry
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_default_config = {"socket_name": "default", "target_pane": ".2"}
 
-"====================Ruby related stuff=================================================
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1 
-compiler ruby         " Enablenable compiler support for ruby
-"Set tab prefrences for ruby files
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab "sts=2 
-"set list "show tabs
+""  Ultisnips list default, I think supertab was using it
+let g:UltiSnipsListSnippets = "<leader><tab>"
 
-"toggle NerdTree file browser with <,> + T
+""  Show Buftabs in status
+let g:buftabs_in_statusline=1
+
+""  Gundo toggle
+nnoremap <F4> :GundoToggle<CR>
+
+""  Simplenote plugin credentials
+if filereadable("~/.simplenote_vim")
+  source ~/.simplenote_vim
+endif
+
+""  Toggle NerdTree file browser with <,> + T
 nmap <leader>t :NERDTreeToggle<RETURN>
 
-"Show line numbers
-set number 
-hi CursorLine   cterm=NONE ctermbg=235
-hi CursorColumn cterm=NONE ctermbg=235
+"   RUBY
 
-"toggle crosshairs
-nnoremap <Leader>cr :set cursorline! cursorcolumn!<CR>
+""  Set tab prefrences for ruby files
+autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
+autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+compiler ruby         " Enablenable compiler support for ruby
