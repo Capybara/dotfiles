@@ -79,6 +79,7 @@ filetype plugin on
 
 autocmd Filetype vim setlocal foldcolumn=3
 autocmd Filetype vim setlocal foldexpr=VimrcFolds()
+autocmd Filetype vim setlocal foldlevel=2
 
 """ Enable filetype detection
 filetype on
