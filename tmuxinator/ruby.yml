@@ -3,7 +3,7 @@
 
 project_name: Webapp
 project_root: ~/Ruby/webapps
-tabs:
+windows:
   - editor:
       layout: e61c,95x27,0,0[95x19,0,0,0,95x7,0,20,1]
       panes:
