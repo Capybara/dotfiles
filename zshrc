@@ -37,7 +37,7 @@ plugins=(vi-mode rvm brew osx history git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/Testing/prompt/find_proj.rb)%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
+export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/dotfiles/prompt/find_proj.rb)%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 %{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
 export PATH=$PATH/Users/Chancho/.rvm/gems/ruby-1.9.3-p392/bin:/Users/Chancho/.rvm/gems/ruby-1.9.3-p392@global/bin:/Users/Chancho/.rvm/rubies/ruby-1.9.3-p392/bin:/Users/Chancho/.rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Users/Chancho/Scripts:/Users/Chancho/Ruby:/Users/Chancho/Bash
