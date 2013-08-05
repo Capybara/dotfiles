@@ -3,3 +3,4 @@
 *.log
 *.bak
 
+.proj_alias.yml
