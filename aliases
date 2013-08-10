@@ -149,3 +149,10 @@ alias tv='open http://10.0.1.8:{8080,5050,8081,8181}'
 alias picard='df | grep -o \/dev\/disk... > /tmp/1 ; echo insert card; sleep 2; read;df | grep -o \/dev\/disk... > /tmp/2; a=$(comm -3 /tmp/1 /tmp/2);echo "$a"" is your card"'
 alias prag='cd ~/Ruby/Prag; ls'
 alias cl='clear'
+alias tes='cd ~/Testing ; ls'
+sec() {
+case $1 in
+fgp) security find-generic-password 
+esac
+}
+

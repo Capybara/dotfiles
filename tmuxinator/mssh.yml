@@ -5,9 +5,8 @@ name: multi-ssh
 root: ~/test
 windows:
   - server:
-      layout: main-vertical
+      layout: tiled
       panes:
-        - ssh mom
+        - tmux bind u set-window-option synchronize-panes on;tmux bind U set-window-option synchronize-panes off;ssh mom
         - ssh mini
-        - ssh imac
         -

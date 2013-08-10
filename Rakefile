@@ -11,6 +11,11 @@ namespace :update do
     sh "brew update; brew upgrade; brew cleanup"
   end
 
+	desc "rvm upgrade"
+	task :rvm_upgrade do
+		sh "rvm get stable"
+	end
+
   desc "ruby gem update" 
   task :gem_update do
     sh "gem update"

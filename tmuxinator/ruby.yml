@@ -1,7 +1,7 @@
 # ~/.tmuxinator/ruby.yml
 # you can make as many tabs as you wish...
 
-project_name: Webapp
+project_name: Ruby
 project_root: ~/Ruby/webapps
 windows:
   - editor:

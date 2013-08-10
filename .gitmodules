@@ -85,6 +85,9 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/buftabs"]
+	path = vim/bundle/buftabs
+	url = https://github.com/vim-scripts/buftabs.git
 [submodule "prompt"]
 	path = prompt
 	url = https://github.com/Capybara/prompt.git
