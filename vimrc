@@ -93,6 +93,9 @@ set cm=blowfish
 ""  Omnicomplete settings
 set ofu=syntaxcomplete#Complete
 
+"" Have context to cursor position
+set scrolloff=5
+
 ""  Makes pasting into vim better
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>

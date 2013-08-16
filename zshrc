@@ -32,11 +32,23 @@ bindkey -M viins 'jj' vi-cmd-mode
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode rvm brew osx history git)
+plugins=(vi-mode pass rvm brew osx history git)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+# COMPLETION SETTINGS
+# add custom completion scripts
+fpath=(~/.zsh/completion $fpath) 
+
+source ~/.profile
+# compsys initialization
+autoload -U compinit
+compinit
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
+
 export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/dotfiles/prompt/find_proj.rb)%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 %{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
@@ -48,6 +60,7 @@ done
 # notify via prowl when an ssh connection is made
 if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publi    capi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F even    t="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection     to `hostname`" >/dev/null 2>&1; fi
 
+zstyle ":completion:*:descriptions" format "%B%d%b"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load     RVM into a shell session *as a function*
 
