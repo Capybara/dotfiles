@@ -9,6 +9,13 @@ alias -- -="cd -"
 # Functions
 p () { cd `~/dotfiles/prompt/proj.rb "$1"` }
 
+safe () {
+	if [ ! -d "$PASSWORD_STORE_DIR" ]; then
+		hdiutil attach -nobrowse ~/Dropbox/safe.sparsebundle
+	else
+		hdiutil detach "$PASSWORD_STORE_DIR"
+	fi
+}
 # Shortcuts
 alias gpg="gpg2"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"

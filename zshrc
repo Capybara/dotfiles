@@ -35,19 +35,20 @@ bindkey -M viins 'jj' vi-cmd-mode
 plugins=(vi-mode pass rvm brew osx history git)
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/.gnupg/agent_script
 # Customize to your needs...
 # COMPLETION SETTINGS
 # add custom completion scripts
 fpath=(~/.zsh/completion $fpath) 
 
-source ~/.profile
 # compsys initialization
 autoload -U compinit
 compinit
 
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
+
+export PASSWORD_STORE_DIR=/Volumes/safe
 
 export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/dotfiles/prompt/find_proj.rb)%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 %{$fg_bold[cyan]%}%n➜%{$reset_color%} '
@@ -61,6 +62,11 @@ done
 if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publi    capi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F even    t="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection     to `hostname`" >/dev/null 2>&1; fi
 
 zstyle ":completion:*:descriptions" format "%B%d%b"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# use gpg completion for gpg2 until there is an update
+compdef gpg2=gpg
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load     RVM into a shell session *as a function*
 
