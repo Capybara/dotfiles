@@ -1,6 +1,6 @@
 # Vim configuration files and plugins
   * ***Run shell script with*** ```./makesymlinks.sh``` **Then:**
-  * ```cd ~/vimdots```
+  * ```cd ~/dotfiles```
   * ```git submodule init```
   * ```git submodule update```
 
