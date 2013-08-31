@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+#Bash Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -35,7 +35,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 plugins=(vi-mode pass rvm brew osx history git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.gnupg/agent_script
+# source 
 # Customize to your needs...
 # COMPLETION SETTINGS
 # add custom completion scripts
@@ -48,14 +48,18 @@ compinit
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
 
+# set Director for Pass unix password manager
 export PASSWORD_STORE_DIR=/Volumes/safe
 
 export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/dotfiles/prompt/find_proj.rb)%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 %{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
-export PATH=$PATH/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Users/$USER/Scripts:/Users/$USER/Ruby:/Users/$USER/Bash
+# Set Path to directories if they exist
+path+=(/usr/local/bin /usr/local/sbin $PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $USER/Testing (N-/))
+
 export EDITOR=vim
-for file in ~/.{aliases,prowl_api}; do
+
+for file in ~/.{aliases,prowl_api,gnupg/agent_script}; do
   [ -r "$file" ] && source "$file"
 done
 # notify via prowl when an ssh connection is made

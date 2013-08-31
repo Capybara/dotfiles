@@ -91,3 +91,18 @@
 [submodule "prompt"]
 	path = prompt
 	url = https://github.com/Capybara/prompt.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/lightline.vim"]
+	path = vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "https:/github.com/jeetsukumaran/vim-buffergator.git"]
+	path = https:/github.com/jeetsukumaran/vim-buffergator.git
+	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/bundle/vim-buffergator"]
+	path = vim/bundle/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vim/bundle/eregex"]
+	path = vim/bundle/eregex
+	url = https://github.com/othree/eregex.vim.git

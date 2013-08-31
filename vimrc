@@ -46,6 +46,10 @@ call togglebg#map("<F5>")
 
 """ Status bar
 set laststatus=2
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 """ Set working directory to the current file
 set autochdir
