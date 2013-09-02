@@ -55,8 +55,8 @@ export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}$(~/dotfiles/prompt/find_proj.rb)
 %{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
 # Set Path to directories if they exist
-path+=(/usr/local/bin /usr/local/sbin $PATH /usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $USER/Testing (N-/))
-
+path+=(/usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $USER/Testing (N-/))
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR=vim
 
 for file in ~/.{aliases,prowl_api,gnupg/agent_script}; do
