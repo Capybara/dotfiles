@@ -15,6 +15,11 @@ safe () {
 	else
 		hdiutil detach "$PASSWORD_STORE_DIR"
 	fi
+	if [ -d "$PASSWORD_STORE_DIR" ]; then
+	/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Mounted:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "com.apple.KeychainAccess"
+	else
+	/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Ejected:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "com.apple.KeychainAccess"
+	fi
 }
 # Shortcuts
 alias gpg="gpg2"
@@ -163,3 +168,4 @@ fgp) security find-generic-password
 esac
 }
 
+alias firewall='/usr/libexec/ApplicationFirewall/socketfilterfw'

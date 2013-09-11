@@ -27,7 +27,7 @@ namespace :update do
   end
 
   desc "run all updates"   
-  task :updates => [:sys_update, :brew_update, :gem_update, :vim_subs_update] do
+  task :updates => [:brew_update, :gem_update, :vim_subs_update] do
     puts "ran all updates"
   end
 end
