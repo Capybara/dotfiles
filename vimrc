@@ -3,6 +3,7 @@ set nocompatible
 "   PATHOGEN is a plugin manager, clone a plugins git repo to .vim/bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+execute pathogen#helptags()
 "   GENERAL 
 
 ""  Toggle current fold with space bar
@@ -38,6 +39,7 @@ syntax on
 
 """ Highlight as you type your search.
 set incsearch
+set hlsearch
 
 """ Make sure iTerm is using solarized colors also
 colorscheme solarized "color schemes are located in .vim/colors
@@ -56,7 +58,7 @@ set autochdir
 
 ""  Use mouse to scroll and select in all modes
 if has('mouse')
-  set mouse=a
+  set mouse=n
 endif
 
 ""  Don't use a swapfile
@@ -126,7 +128,7 @@ let g:gist_clip_command = 'pbcopy'
 ""  Pass code from tmux pane into another running pry
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_default_config = {"socket_name": "default", "target_pane": ".2"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": ".3"}
 
 ""  Ultisnips list default, I think supertab was using it
 let g:UltiSnipsListSnippets = "<leader><tab>"
@@ -143,7 +145,7 @@ if filereadable("~/.simplenote_vim")
 endif
 
 ""  Toggle NerdTree file browser with <,> + T
-nmap <leader>t :NERDTreeToggle<RETURN>
+nmap <leader>n :NERDTreeToggle<RETURN>
 
 "   RUBY
 

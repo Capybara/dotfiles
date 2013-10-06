@@ -35,10 +35,10 @@ end
 namespace :utilities do
   desc "repair disk permissions" 
   task :repair do
-    sh 'diskutil repairPermissions /'
+    sh '/usr/sbin/diskutil repairPermissions /'
   end
   desc "verify_disk" 
   task :verify_disk do
-    sh 'diskutil verifyVolume /'
+    sh '/usr/sbin/diskutil verifyVolume /'
   end
 end
