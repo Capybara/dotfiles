@@ -1,0 +1,24 @@
+# ~/.tmuxinator/rails.yml
+
+name: rails
+root: ~/Rails/Testing/sample_app
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+windows:
+  - editor:
+      layout: af7b,95x27,0,0[95x24,0,0{22x24,0,0,7,72x24,23,0,10},95x2,0,25,9]
+      panes:
+        - ls -a
+        - vim
+        -
