@@ -1,5 +1,5 @@
-#require 'interactive_editor'
-Pry.config.editor = "vim"
+require 'interactive_editor'
+Pry.editor = "/Applications/MacVim.app/Contents/MacOS/Vim --noplugin"
 
 
 

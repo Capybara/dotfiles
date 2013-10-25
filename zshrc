@@ -63,7 +63,7 @@ for file in ~/.{aliases,prowl_api,gnupg/agent_script}; do
   [ -r "$file" ] && source "$file"
 done
 # notify via prowl when an ssh connection is made
-if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publi    capi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F even    t="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection     to `hostname`" >/dev/null 2>&1; fi
+if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publicapi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F event="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection to `hostname`" >/dev/null 2>&1; fi
 
 zstyle ":completion:*:descriptions" format "%B%d%b"
 
