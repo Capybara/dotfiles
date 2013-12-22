@@ -37,9 +37,8 @@ nnoremap <Leader>cr :set cursorline! cursorcolumn!<CR>
 """ Enable syntaxntax highlighting
 syntax on
 
-""" Highlight as you type your search.
 set incsearch
-set hlsearch
+" set hlsearch
 
 """ Make sure iTerm is using solarized colors also
 colorscheme solarized "color schemes are located in .vim/colors
@@ -92,6 +91,7 @@ filetype on
 
 """ Enable filetype-specific indenting
 filetype indent on
+filetype plugin indent on
 
 ""  Use blowfish encryption
 set cm=blowfish
@@ -150,8 +150,9 @@ nmap <leader>n :NERDTreeToggle<RETURN>
 "   RUBY
 
 ""  Set tab prefrences for ruby files
-autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
-autocmd FileType ruby,eruby let g:rubycomplete_rails=1
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
-compiler ruby         " Enablenable compiler support for ruby
+set ts=2 sw=2 expandtab
+"autocmd Filetype ruby setlocal ts=2 sw=2 sts=2
+"autocmd FileType ruby,eruby let g:rubycomplete_rails=1
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+"compiler ruby         " Enablenable compiler support for ruby

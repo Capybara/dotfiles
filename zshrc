@@ -55,7 +55,7 @@ export PASSWORD_STORE_KEY="j@pass"
 export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
 # Set Path to directories if they exist
-path+=(/usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $USER/Testing (N-/))
+path+=(/usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $HOME/Testing (N-/))
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR="vim --noplugin"
 

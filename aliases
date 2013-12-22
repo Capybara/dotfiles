@@ -8,6 +8,14 @@ alias -- -="cd -"
 
 # Functions
 p () { cd `~/dotfiles/prompt/proj.rb "$1"` }
+# vnc over ssh tunnel
+vnc () {
+  if grep "host $1" ~/.ssh/config;then
+    ssh -C -c blowfish -f -L 5901:localhost:5900 $1 sleep 30; \open vnc://localhost:5901
+  else
+    echo "Host must be in config"
+  fi
+}
 # mount pass store /unmount pass store
 safe () {
 	if [ "$1" = '-t' ] && [ "$PASSWORD_STORE_KEY" = "j@pass" ]
@@ -23,13 +31,13 @@ safe () {
 			hdiutil detach "$PASSWORD_STORE_DIR"
 		fi
 		if [ ! "$1" = '-t' ] && [ -d "$PASSWORD_STORE_DIR" ]; then
-		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Mounted:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "capybara.Pass"
+		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Mounted:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "org.gpgtools.gpgkeychainaccess"
 		else
-		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Ejected:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "capybara.Pass"
+		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Ejected:" -group 74 -message "$PASSWORD_STORE_DIR" -sender "org.gpgtools.gpgkeychainaccess"
 		sleep 2
 		fi
 	fi
-		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Key:" -group 74 -message "$PASSWORD_STORE_KEY" -sender "capybara.Pass"
+		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Key:" -group 74 -message "$PASSWORD_STORE_KEY" -sender "org.gpgtools.gpgkeychainaccess"
 }
 # Shortcuts
 alias gpg="gpg2"
@@ -181,3 +189,4 @@ esac
 alias firewall='/usr/libexec/ApplicationFirewall/socketfilterfw'
 alias rl='cd ~/Rails/Testing;ls -a'
 alias gmail='~/.getmail/getmail_launchd.sh'
+alias rake='noglob rake'

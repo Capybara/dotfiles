@@ -53,7 +53,7 @@ namespace :utilities do
   desc "repair disk permissions" 
   task :repair do
 		safe_task do
-			sh '/usr/sbin/diskutil repairPermissions /'
+			sh 'sudo /usr/sbin/diskutil repairPermissions /'
 		end
   end
 	desc "verify I.D.S monitored directories"
