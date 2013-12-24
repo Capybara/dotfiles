@@ -32,7 +32,7 @@ bindkey -M viins 'jj' vi-cmd-mode
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode pass rvm brew osx history git)
+plugins=(vi-mode pass rvm brew osx history git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 # source 
@@ -43,7 +43,7 @@ fpath=(~/.zsh/completion $fpath)
 
 # compsys initialization
 autoload -U compinit
-compinit
+compinit -u
 
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
@@ -62,12 +62,13 @@ export EDITOR="vim --noplugin"
 for file in ~/.{aliases,prowl_api,gnupg/agent_script}; do
   [ -r "$file" ] && source "$file"
 done
+
 # notify via prowl when an ssh connection is made
 if [[ -n "$SSH_CLIENT" ]] ; then  curl --silent https://prowl.weks.net/publicapi/add -F apikey="$PAPI" -F priority=2 -F application="SSH-Notify" -F event="SSH Connection" -F description="$SSH_CLIENT""  has made an ssh connection to `hostname`" >/dev/null 2>&1; fi
 
 zstyle ":completion:*:descriptions" format "%B%d%b"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # use gpg completion for gpg2 until there is an update
 compdef gpg2=gpg
@@ -76,3 +77,4 @@ compdef gpg2=gpg
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+/usr/bin/clear

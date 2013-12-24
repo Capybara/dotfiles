@@ -39,6 +39,8 @@ safe () {
 	fi
 		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Key:" -group 74 -message "$PASSWORD_STORE_KEY" -sender "org.gpgtools.gpgkeychainaccess"
 }
+# admin login
+alias adm='pass -c SERVERS/MACBOOK/os_admin;login admin'
 # Shortcuts
 alias gpg="gpg2"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
@@ -163,7 +165,7 @@ alias map="xargs -n1"
 #for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 #	alias "$method"="lwp-request -m '$method'"
 #done
-
+alias icefloor='sudo /Applications/IceFloor.app/Contents/MacOS/IceFloor'
 alias lo='log out'
 alias pffw='tail -f /var/log/pffirewall.log'
 alias afw='tail -f /var/log/appfirewall.log'
@@ -174,19 +176,11 @@ alias rub='cd /Users/$USER/Ruby ; ls'
 alias bas='cd /Users/$USER/Bash ; ls'
 alias tst='cd $HOME/Testing ; ls'
 alias repair='diskutil repairPermissions /'
-#alias mosh='mosh -a -server=/usr/local/bin/mosh-server'
-alias tv='open http://10.0.1.8:{8080,5050,8081,8181}'
-alias picard='df | grep -o \/dev\/disk... > /tmp/1 ; echo insert card; sleep 2; read;df | grep -o \/dev\/disk... > /tmp/2; a=$(comm -3 /tmp/1 /tmp/2);echo "$a"" is your card"'
-alias prag='cd ~/Ruby/Prag; ls'
 alias cl='clear'
 alias tes='cd ~/Testing ; ls'
-sec() {
-case $1 in
-fgp) security find-generic-password 
-esac
-}
-
 alias firewall='/usr/libexec/ApplicationFirewall/socketfilterfw'
 alias rl='cd ~/Rails/Testing;ls -a'
 alias gmail='~/.getmail/getmail_launchd.sh'
 alias rake='noglob rake'
+alias tmp='mkdir -p /tmp/test ; cd /tmp/test ; ls -a'
+alias syn='cd $HOME/Sync ; ls'

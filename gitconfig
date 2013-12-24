@@ -1,0 +1,42 @@
+[color]
+	ui = auto
+	interactive = auto
+[alias]
+	s = status
+	a = !git add . && git status
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . 		&& git status
+	c = commit -am
+	cm = commit -m
+	ca = commit --amend # careful
+	ac = !git add . && git commit
+	acm = !git add . && git commit -m
+	l 			= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	ll = log --stat --abbrev-commit
+	d = diff --statcolor-words
+	dh = diff --color-words head
+	master = checkout master
+	spull = svn rebase
+	spush = svn dcommit
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+	mylog = log --pretty=format:'%h %s [%an]' --graph
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[core]
+	excludesfile = /Users/j/.gitignore_global
+	editor = /Applications/MacVim.app/Contents/MacOS/Vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+			user = Capybara
+[user]
+	name = Capybara
+	email = git.capybara@gmail.com
+	signingkey = git.capybara@gmail.com
+[push]
+	default = simple
+[gpg]
+	program = /usr/local/bin/gpg2
