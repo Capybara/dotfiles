@@ -1,0 +1,21 @@
+snippet plist "OS X LaunchdAgent plist for use with rvm" b
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+PLIST
+	<key>Label</key>
+	<string>${1:com.j.${2:unique_name}}</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>${3:/Users/j/Ruby/_rvmruby}</string>
+		<string>${4:2.0.0}</string>
+		<string>${5:/Full/Path/To/Script}</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartInterval</key>
+	<integer>${6:3600}</integer>
+</dict>
+</plist>
+endsnippet
