@@ -4,4 +4,4 @@
 *.bak
 .proj_alias.yml
 vim/bundle/
-!vim/bundle/vundle
+!vim/bundle/vundle/
