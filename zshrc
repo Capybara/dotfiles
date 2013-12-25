@@ -49,10 +49,10 @@ compinit -u
 zstyle ':completion:*' menu select=2
 
 # set Director for Pass unix password manager
-export PASSWORD_STORE_DIR=/Volumes/safe
-export PASSWORD_STORE_KEY="j@pass"
+#export PASSWORD_STORE_DIR=/Volumes/safe
+#export PASSWORD_STORE_KEY="j@pass"
 
-export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%{$fg_bold[cyan]%}%n➜%{$reset_color%} '
+export PROMPT='%{$fg[black]%}%{$bg_bold[cyan]%}%m%{$bg_bold[red]%}%{$fg_bold[green]%}%p %{$fg[cyan]%} %c  %{$bg_bold[default]%} % %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}%{$fg_bold[cyan]%}%n➜%{$reset_color%} '
 
 # Set Path to directories if they exist
 path+=(/usr/bin /bin /usr/sbin /sbin /opt/X11/bin /usr/local/git/bin $HOME/Scripts $HOME/Ruby $HOME/Bash $HOME/Testing (N-/))
