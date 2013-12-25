@@ -3,5 +3,5 @@
 *.log
 *.bak
 .proj_alias.yml
-bundle/**
-~bundle/vundle
+vim/bundle/**
+~vim/bundle/vundle
