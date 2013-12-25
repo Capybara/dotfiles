@@ -1,11 +1,6 @@
 "   VIM, not Vi
 set nocompatible
-"   PATHOGEN is a plugin manager, clone a plugins git repo to .vim/bundles
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
 "   GENERAL 
-
 ""  Toggle current fold with space bar
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
@@ -13,6 +8,49 @@ vnoremap <Space> zf
 let mapleader = ","
 
 ""  Copy/Paste
+""  Vundle
+filetype off                  " required! for Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"" let Vundle manage Vundle
+""" required! 
+Bundle 'gmarik/vundle'
+""" original repos on GitHub
+Bundle 'SirVer/ultisnips.git'
+Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'godlygeek/tabular.git'
+Bundle 'itchyny/lightline.vim'
+Bundle 'jisaacks/GitGutter.git'
+Bundle 'jpalardy/vim-slime.git'
+Bundle 'mattn/gist-vim.git'
+Bundle 'mattn/webapi-vim.git'
+Bundle 'othree/eregex.vim.git'
+Bundle 'plasticboy/vim-markdown.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'tpope/vim-abolish.git'
+Bundle 'tpope/vim-bundler.git'
+Bundle 'tpope/vim-dispatch.git'
+Bundle 'tpope/vim-endwise.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-repeat.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-unimpaired.git'
+Bundle 'vim-scripts/ScrollColors.git'
+Bundle 'vim-scripts/buftabs.git'
+
+filetype plugin indent on     " required! for Vundle
+
+""" Brief help
+""" :BundleList          - list configured bundles
+""" :BundleInstall(!)    - install (update) bundles
+""" :BundleSearch(!) foo - search (or refresh cache first) for foo
+""" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"""
+""" see :h vundle for more details or wiki for FAQ
 
 """ When something is yanked in vim, it goes to my OS X clipboard
 set clipboard=unnamed
@@ -38,7 +76,6 @@ nnoremap <Leader>cr :set cursorline! cursorcolumn!<CR>
 syntax on
 
 set incsearch
-" set hlsearch
 
 """ Make sure iTerm is using solarized colors also
 colorscheme solarized "color schemes are located in .vim/colors
@@ -128,7 +165,7 @@ let g:gist_clip_command = 'pbcopy'
 ""  Pass code from tmux pane into another running pry
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_default_config = {"socket_name": "default", "target_pane": ".3"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": ".2"}
 
 ""  Ultisnips list default, I think supertab was using it
 let g:UltiSnipsListSnippets = "<leader><tab>"
@@ -157,7 +194,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 compiler ruby         " Enablenable compiler support for ruby
 
-"   PRY
+""" NOTE: comments after Bundle commands are not allowed.
 
 "" Pry stuff
 " Add the pry debug line with \bp (or <Space>bp, if you did: map <Space> <Leader> )

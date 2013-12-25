@@ -2,5 +2,6 @@
 .DS_Store
 *.log
 *.bak
-
 .proj_alias.yml
+bundle/**
+~bundle/vundle
