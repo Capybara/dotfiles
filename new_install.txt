@@ -1,0 +1,16 @@
+# use vim slime to send to a terminal pane
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+brew install wget
+brew install git
+brew install macvim --custom-icons --override-system-vim
+brew install pass
+brew install terminal-notifier
+brew install git
+brew install tmux
+brew install git
+brew install tmux
+gem install pry pry-byebug
+gem install terminal-notifier
+gem install prowl
+gem install tmuxinator
