@@ -3,12 +3,17 @@
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
+# clone vundle into vim/bundle/
+echo 'cloning vundle into vim/bundle/'
+if [ ! -d vim/bundle/vundle ] ; then
+	git clone http://github.com/gmarik/vundle.git vim/bundle/vundle
+fi
 
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc inputrc bash_profile vimrc vim pryrc tmuxinator tmux.conf aliases"    # list of files/folders to symlink in homedir
+files="gitignore zshrc inputrc bash_profile vimrc vim pryrc tmuxinator tmux.conf aliases"    # list of files/folders to symlink in homedir
 
 ##########
 
