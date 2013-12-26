@@ -1,3 +1,4 @@
+# use vim slime to send to a terminal pane
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 brew install wget
