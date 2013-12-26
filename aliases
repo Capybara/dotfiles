@@ -40,7 +40,7 @@ safe () {
 		/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Pass" -subtitle "Key:" -group 74 -message "$PASSWORD_STORE_KEY" -sender "org.gpgtools.gpgkeychainaccess"
 }
 # admin login
-alias adm='pass -c admin;login admin'
+alias adm='pass -c adm;login admin'
 # Shortcuts
 alias gpg="gpg2"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
@@ -184,4 +184,4 @@ alias gmail='~/.getmail/getmail_launchd.sh'
 alias rake='noglob rake'
 alias tmp='mkdir -p /tmp/test ; cd /tmp/test ; ls -a'
 alias syn='cd $HOME/Sync ; ls'
-alias gui=gui='pass -c gui ; pbpaste'
+alias gui='pass -c gui ; pbpaste'
