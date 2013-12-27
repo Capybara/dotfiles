@@ -8,15 +8,16 @@ vnoremap <Space> zf
 let mapleader = ","
 
 ""  Copy/Paste
-""  Vundle
+"   Vundle "" let Vundle manage Vundle
+
 filetype off                  " required! for Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"" let Vundle manage Vundle
-""" required! 
+"" Plugins
 Bundle 'gmarik/vundle'
 """ original repos on GitHub
+Bundle 'kien/ctrlp.vim'
 Bundle 'SirVer/ultisnips.git'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'ervandew/supertab.git'
@@ -156,8 +157,6 @@ imap jj <Esc>
 ""  Map vim cheatsheet
 map <silent> <leader>x :!qlmanage -p ~/dotfiles/vim_cheat.gif<CR>
 
-"   PLUGIN STUFF
-
 ""  Gist settings
 let g:gist_show_privates = 1
 let g:gist_clip_command = 'pbcopy'
@@ -169,6 +168,9 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": ".2"}
 
 ""  Ultisnips list default, I think supertab was using it
 let g:UltiSnipsListSnippets = "<leader><tab>"
+
+""  CtrlP settings
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 ""  Show Buftabs in status
 let g:buftabs_in_statusline=1
