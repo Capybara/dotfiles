@@ -1,5 +1,6 @@
 # Vim configuration files and plugins
   * ***Run shell script with*** 
+  * ``` git clone https://github.com/Capybara/dotfiles.git ~/dotfiles ```
   * ```cd ~/dotfiles```
   * ```./makesymlinks.sh```
   
